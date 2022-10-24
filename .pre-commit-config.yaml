@@ -10,7 +10,6 @@ repos:
         args: [--pytest-test-first]
     # Formatter
     -   id: end-of-file-fixer
-    -   id: double-quote-string-fixer
     -   id: pretty-format-json
     -   id: trailing-whitespace
 -   repo: https://github.com/psf/black
@@ -24,14 +23,14 @@ repos:
     rev: 5.0.4
     hooks:
     -   id: flake8
-        args: [wonderland]
+        args: [wonderland/udfs]
         always_run: true
 -   repo: https://github.com/pycqa/isort
     rev: 5.10.0
     hooks:
       - id: isort
         name: isort (python)
-        args: [wonderland]
+        args: [wonderland/udfs]
         always_run: true
 -   repo: local
     hooks:
