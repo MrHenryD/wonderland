@@ -18,7 +18,7 @@ python-versions = ">=3.5"
 dev = ["cloudpickle", "coverage[toml] (>=5.0.2)", "furo", "hypothesis", "mypy (>=0.900,!=0.940)", "pre-commit", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "sphinx", "sphinx-notfound-page", "zope.interface"]
 docs = ["furo", "sphinx", "sphinx-notfound-page", "zope.interface"]
 tests = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "zope.interface"]
-tests_no_zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins"]
+tests-no-zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy (>=0.900,!=0.940)", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins"]
 
 [[package]]
 name = "black"
@@ -78,7 +78,7 @@ optional = false
 python-versions = ">=3.6.0"
 
 [package.extras]
-unicode_backport = ["unicodedata2"]
+unicode-backport = ["unicodedata2"]
 
 [[package]]
 name = "click"
@@ -453,7 +453,7 @@ urllib3 = ">=1.21.1,<1.27"
 
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
-use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "setuptools"
@@ -509,7 +509,7 @@ secure-local-storage = ["keyring (!=16.1.0,<24.0.0)"]
 
 [[package]]
 name = "snowflake-snowpark-python"
-version = "0.12.0"
+version = "1.0.0"
 description = "Snowflake Snowpark for Python"
 category = "main"
 optional = false
@@ -518,14 +518,14 @@ python-versions = "==3.8.*"
 [package.dependencies]
 cloudpickle = ">=1.6.0,<=2.0.0"
 setuptools = ">=40.6.0"
-snowflake-connector-python = ">=2.7.12"
-typing-extensions = ">=4.1.0"
+snowflake-connector-python = ">=2.7.12,<3.0.0"
+typing-extensions = ">=4.1.0,<5.0.0"
 wheel = "*"
 
 [package.extras]
 development = ["cachetools", "coverage", "pytest", "pytest-cov", "sphinx (==5.0.2)"]
-pandas = ["snowflake-connector-python[pandas] (>=2.7.12)"]
-secure-local-storage = ["snowflake-connector-python[secure-local-storage] (>=2.7.12)"]
+pandas = ["snowflake-connector-python[pandas] (>=2.7.12,<3.0.0)"]
+secure-local-storage = ["snowflake-connector-python[secure-local-storage] (>=2.7.12,<3.0.0)"]
 
 [[package]]
 name = "SQLAlchemy"
@@ -543,19 +543,19 @@ aiomysql = ["aiomysql", "greenlet (!=0.4.17)"]
 aiosqlite = ["aiosqlite", "greenlet (!=0.4.17)", "typing_extensions (!=3.10.0.1)"]
 asyncio = ["greenlet (!=0.4.17)"]
 asyncmy = ["asyncmy (>=0.2.3,!=0.2.4)", "greenlet (!=0.4.17)"]
-mariadb_connector = ["mariadb (>=1.0.1,!=1.1.2)"]
+mariadb-connector = ["mariadb (>=1.0.1,!=1.1.2)"]
 mssql = ["pyodbc"]
-mssql_pymssql = ["pymssql"]
-mssql_pyodbc = ["pyodbc"]
+mssql-pymssql = ["pymssql"]
+mssql-pyodbc = ["pyodbc"]
 mypy = ["mypy (>=0.910)", "sqlalchemy2-stubs"]
 mysql = ["mysqlclient (>=1.4.0)", "mysqlclient (>=1.4.0,<2)"]
-mysql_connector = ["mysql-connector-python"]
+mysql-connector = ["mysql-connector-python"]
 oracle = ["cx_oracle (>=7)", "cx_oracle (>=7,<8)"]
 postgresql = ["psycopg2 (>=2.7)"]
-postgresql_asyncpg = ["asyncpg", "greenlet (!=0.4.17)"]
-postgresql_pg8000 = ["pg8000 (>=1.16.6,!=1.29.0)"]
-postgresql_psycopg2binary = ["psycopg2-binary"]
-postgresql_psycopg2cffi = ["psycopg2cffi"]
+postgresql-asyncpg = ["asyncpg", "greenlet (!=0.4.17)"]
+postgresql-pg8000 = ["pg8000 (>=1.16.6,!=1.29.0)"]
+postgresql-psycopg2binary = ["psycopg2-binary"]
+postgresql-psycopg2cffi = ["psycopg2cffi"]
 pymysql = ["pymysql", "pymysql (<1)"]
 sqlcipher = ["sqlcipher3_binary"]
 
@@ -644,7 +644,7 @@ test = ["pytest (>=3.0.0)", "pytest-cov"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.0"
-content-hash = "a986a565b02043ecce43ed3fa89e2ef316565e649e583d50f40c08898555dcd5"
+content-hash = "3797922bd339993391d09cb722bbbe14cea34abb74b641688ab9828b94b64b19"
 
 [metadata.files]
 asn1crypto = [
@@ -1166,8 +1166,8 @@ snowflake-connector-python = [
     {file = "snowflake_connector_python-2.8.0-cp39-cp39-win_amd64.whl", hash = "sha256:c9aa4133b4babdc0f800411eef298721b4476af5a5068e23f048c6f08ea1b150"},
 ]
 snowflake-snowpark-python = [
-    {file = "snowflake-snowpark-python-0.12.0.tar.gz", hash = "sha256:369c5ef8011462cac6708293dceb135c49d5585801cc2f67eb22fe123de0475c"},
-    {file = "snowflake_snowpark_python-0.12.0-py3-none-any.whl", hash = "sha256:06e9e767333f08d8694b58ece05a03ba6ca28c3fcb4a888d17bab6825ce4504b"},
+    {file = "snowflake-snowpark-python-1.0.0.tar.gz", hash = "sha256:11493391e81a910bc10e8550031440050c47ce4a44aa0401c3c4e51dcb826ddf"},
+    {file = "snowflake_snowpark_python-1.0.0-py3-none-any.whl", hash = "sha256:4a4d5abca0e416f7b681e1d429623cd0be76de318164a78132613a3779168872"},
 ]
 SQLAlchemy = [
     {file = "SQLAlchemy-1.4.42-cp27-cp27m-macosx_10_14_x86_64.whl", hash = "sha256:28e881266a172a4d3c5929182fde6bb6fba22ac93f137d5380cc78a11a9dd124"},
