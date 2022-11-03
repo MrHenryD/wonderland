@@ -11,7 +11,7 @@ python = "3.8.0"
 snowflake-snowpark-python = "^0.12.0"
 SQLAlchemy = "^1.4.42"
 pandas = "^1.5.1"
-snowflake-connector-python = "^2.8.0"
+snowflake-connector-python = "^2.8.1"
 tqdm = "^4.64.1"
 
 
